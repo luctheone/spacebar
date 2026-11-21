@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Build and core checks
+    runs-on: macos-14
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      # The runner image already ships the Xcode command line tools, so no
+      # Swift setup action is needed; `swift` resolves to the image's toolchain.
+      - name: Show toolchain
+        run: swift --version
+
+      - name: Build
+        run: swift build
+
+      # The accounting, memory and Trash-boundary checks are a runnable target
+      # rather than an XCTest bundle, because they assert on live syscalls
+      # (libproc, diskutil plist parsing) through the same core the UI uses.
+      - name: Core checks
+        run: swift run SpaceBarChecks

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleName</key><string>SpaceBar</string>
+<key>CFBundleDisplayName</key><string>SpaceBar</string>
+<key>CFBundleExecutable</key><string>SpaceBar</string>
+<key>CFBundleIdentifier</key><string>net.appledore.spacebar</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>1.1.0</string>
+<key>CFBundleVersion</key><string>3</string>
+<key>CFBundleIconFile</key><string>SpaceBar</string>
+<key>LSMinimumSystemVersion</key><string>13.0</string>
+<key>LSUIElement</key><false/>
+<key>LSMultipleInstancesProhibited</key><true/>
+<key>NSHighResolutionCapable</key><true/>
+<key>NSDocumentsFolderUsageDescription</key><string>SpaceBar measures local folder sizes when you ask it to scan. It never opens document contents or deletes files.</string>
+<key>NSDownloadsFolderUsageDescription</key><string>SpaceBar measures local download sizes when you choose Downloads. It never opens file contents or deletes files.</string>
+<key>NSDesktopFolderUsageDescription</key><string>SpaceBar measures local Desktop sizes only when you ask it to scan. It never opens file contents or deletes files.</string>
+</dict></plist>
